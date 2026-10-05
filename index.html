@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chelsea Olyviani Purnomo | Data Scientist & AI Engineer</title>
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css'">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader"><p>Loading Chelsea's Portfolio<span class="dots"><i>.</i><i>.</i><i>.</i></span></p><div class="bar"><span></span></div></div>
+<canvas id="trail" aria-hidden="true"></canvas>
+<div id="spot" aria-hidden="true"></div>
+<div class="c-dot" id="cDot" aria-hidden="true"></div>
+<div class="c-ring" id="cRing" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a href="#home" class="active">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#organization">Organization</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+</nav>
+
+<header id="home" class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <div class="hero-inner">
+    <p class="hi">Hi, I'm</p>
+    <h1>Chelsea Olyviani Purnomo</h1>
+    <p class="aspiring">Aspiring</p>
+    <p class="role"><span id="typed"></span><span class="caret"></span></p>
+    <div class="btns">
+      <a class="btn pink" href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> View Repository</a>
+      <a class="btn yellow" href="resume.pdf" download="Chelsea_Olyviani_Purnomo_Resume.pdf"><i class="fa-solid fa-download"></i> Download Resume</a>
+    </div>
+  </div>
+  <a class="scroll" href="#about" aria-label="Scroll down to About section"><span>Scroll</span><i class="fa-solid fa-chevron-down"></i></a>
+</header>
+
+<section id="about">
+  <h2>About &amp; Education</h2>
+  <div class="about-grid">
+    <div class="photo tilt"><div class="frame"><span>CO</span><img src="assets/profile.jpeg" alt="Photo of Chelsea Olyviani Purnomo" onerror="this.remove()"></div></div>
+    <div>
+      <p class="lead">I'm a Data Science student who enjoys turning raw data into models and products people can actually use. My interests span Machine Learning, data analysis, and software development, from remote sensing research to web apps.</p>
+      <div class="edu tilt">
+        <div><h3>Bina Nusantara University (BINUS University)</h3><p>Bachelor of Computer Science, Data Science Specialization Track</p><small>Aug 2024 - Present</small></div>
+        <div class="gpa"><b>3.95</b><span>GPA / 4.00</span></div>
+      </div>
+    </div>
+  </div>
+  <h3 class="sub">Skill Radar Scan <small>Hover a node to inspect it</small></h3>
+  <div class="legend"><span style="--c:#FFD166">Soft skills</span><span style="--c:#FF6B9B">Data &amp; ML</span><span style="--c:#8338EC">Dev &amp; Tools</span></div>
+  <div class="radar" id="radar"><div class="sweep"></div><div class="core">SKILLS</div></div>
+</section>
+
+<section id="research">
+  <h2>Research &amp; Publication</h2>
+  <article class="paper tilt">
+    <div class="paper-body">
+      <span class="tag">IEEE, Sept 2026</span>
+      <h3><i>Ablation Study on Sentinel-2 and Light Detection Ranging for Mangrove Above-Ground Carbon Estimation</i></h3>
+      <ul>
+        <li>XGBoost regression: R&sup2; = 0.8779, RMSE = 6.6687 Mg C/ha</li>
+        <li>Sentinel-2 multispectral and LiDAR fusion, plus GLCM texture features</li>
+      </ul>
+      <a class="btn pink" href="https://ieeexplore.ieee.org/" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> View IEEE Paper</a>
+    </div>
+    <figure class="polaroid">
+      <div class="ph"><i class="fa-solid fa-satellite"></i><img src="assets/research.jpeg" alt="Mangrove remote sensing visualization" onerror="this.remove()"></div>
+      <figcaption>Mangrove carbon mapping · Sentinel-2 + LiDAR</figcaption>
+    </figure>
+  </article>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <article class="card tilt">
+      <h3>KosIn</h3>
+      <div class="stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span></div>
+      <p>Machine Learning app that predicts boarding house (kost) rental prices in Jakarta using a Random Forest model (R&sup2; = 0.8105). Selected as one of the top 22 teams at CS Festival 2026.</p>
+      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a><a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Live Demo</a></div>
+    </article>
+    <article class="card tilt">
+      <h3>AksiKita</h3>
+      <div class="stack"><span>Vue.js</span><span>Nest.js</span><span>Prisma</span><span>PostgreSQL</span></div>
+      <p>Civic-tech platform for community-driven reporting of environmental and infrastructure issues, complete with gamification.</p>
+      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+    </article>
+    <article class="card tilt">
+      <h3>FitAI</h3>
+      <div class="stack"><span>Python</span><span>Hugging Face</span></div>
+      <p>AI recommendation engine for personalized workout and nutrition plans, based on physical metrics and user preferences.</p>
+      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-mark"><span></span></div>
+      <div class="item tilt"><span class="tag">Jul 2025 - Jan 2026</span><h3>Founder &amp; Bootcamp Mentor</h3><p class="org">LogicLab Bootcamp</p><p>Taught Algorithms &amp; C Programming to 15+ participants across 13 full curriculum sessions.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="organization">
+  <h2>Organization</h2>
+  <p class="hint">One timeline, oldest to newest. Drag, swipe, click a card, or use the arrows.</p>
+  <div class="carousel">
+    <button class="car-btn prev" id="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="track" id="track" tabindex="0" aria-label="Organization timeline"><div class="rail" id="rail"></div></div>
+    <button class="car-btn next" id="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="trophy-wrap">
+    <button class="trophy" id="trophyBtn" aria-haspopup="dialog" aria-controls="achModal" aria-label="Open achievements">
+      <span class="halo"></span><i class="fa-solid fa-trophy"></i>
+    </button>
+    <button class="btn yellow unveil" id="unveilBtn" aria-haspopup="dialog" aria-controls="achModal">Click Here to Unveil</button>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact tilt">
+    <a href="mailto:chelsea.purnomo@binus.ac.id" style="--c:#FF6B9B"><i class="fa-solid fa-envelope"></i><b>Email</b><span>chelsea.purnomo@binus.ac.id</span></a>
+    <a href="https://wa.me/6289630450183" target="_blank" rel="noopener" style="--c:#25b866"><i class="fa-brands fa-whatsapp"></i><b>WhatsApp</b><span>+62 89630450183</span></a>
+    <a href="https://linkedin.com/in/chelseaolyviani" target="_blank" rel="noopener" style="--c:#0a66c2"><i class="fa-brands fa-linkedin-in"></i><b>LinkedIn</b><span>linkedin.com/in/chelseaolyviani</span></a>
+    <a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener" style="--c:#8338EC"><i class="fa-brands fa-github"></i><b>GitHub</b><span>github.com/chelseaolyvianii</span></a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Chelsea Olyviani Purnomo. Built with HTML, CSS, and JavaScript.</footer>
+
+<div class="modal" id="achModal" role="dialog" aria-modal="true" aria-labelledby="achTitle" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-x" id="achClose" aria-label="Close achievements"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="achTitle"><i class="fa-solid fa-trophy"></i> Achievements</h3>
+    <div class="modal-body">
+      <ul class="ach-list">
+        <li>
+          <div class="ach-head"><i class="fa-solid fa-medal" style="--c:#F5B83D"></i><p>3rd Place Winner in INBIZ 2025 Business Competition</p></div>
+          <button type="button" class="cert ph" aria-label="View certificate larger"><i class="fa-solid fa-certificate"></i><img src="assets/cert-1.jpeg" alt="Certificate: 3rd Place Winner in INBIZ 2025" draggable="false" onerror="this.remove()"></button>
+        </li>
+        <li>
+          <div class="ach-head"><i class="fa-solid fa-award" style="--c:#FF6B9B"></i><p>Top 10 Finalist in INNOBIZ FST 2025 Business Plan Competition</p></div>
+          <button type="button" class="cert ph" aria-label="View certificate larger"><i class="fa-solid fa-certificate"></i><img src="assets/cert-2.jpeg" alt="Certificate: Top 10 Finalist in INNOBIZ FST 2025" draggable="false" onerror="this.remove()"></button>
+        </li>
+        <li>
+          <div class="ach-head"><i class="fa-solid fa-graduation-cap" style="--c:#8338EC"></i><p>Dean's List Recipient 2025 – School of Computer Science</p></div>
+          <button type="button" class="cert ph" aria-label="View certificate larger"><i class="fa-solid fa-certificate"></i><img src="assets/cert-3.jpeg" alt="Certificate: Dean's List Recipient 2025" draggable="false" onerror="this.remove()"></button>
+        </li>
+      </ul>
+      <div class="modal-foot"><button class="btn pink" id="achClose2">Close</button></div>
+    </div>
+  </div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview" aria-hidden="true"><img id="lbImg" alt=""></div>
+
+<button id="toTop" aria-label="Back to top"><i class="fa-solid fa-atom"></i><span>TOP //</span></button>
+<script src="script.js"></script>
+</body>
+</html>
