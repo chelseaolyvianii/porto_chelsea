@@ -59,13 +59,14 @@
   <h2>Research &amp; Publication</h2>
   <article class="paper tilt">
     <div class="paper-body">
-      <span class="tag">IEEE, Sept 2026</span>
+      <span class="tag">ICIMTECH, Sept 2026</span>
       <h3><i>Ablation Study on Sentinel-2 and Light Detection Ranging for Mangrove Above-Ground Carbon Estimation</i></h3>
       <ul>
         <li>XGBoost regression: R&sup2; = 0.8779, RMSE = 6.6687 Mg C/ha</li>
         <li>Sentinel-2 multispectral and LiDAR fusion, plus GLCM texture features</li>
       </ul>
       <a class="btn pink" href="https://ieeexplore.ieee.org/document/11698965" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> View IEEE Paper</a>
+      <a class="btn pink" href="https://drive.google.com/file/d/1KeCYPqTf7LU7sosgY_hvCP4aVanpYv0G/view?usp=sharing" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines"></i> View Certificate</a>
     </div>
     <figure class="polaroid">
       <div class="ph"><i class="fa-solid fa-satellite"></i><img src="assets/research.jpeg" alt="Mangrove remote sensing visualization" onerror="this.remove()"></div>
@@ -77,24 +78,94 @@
 <section id="projects">
   <h2>Projects</h2>
   <div class="grid">
-    <article class="card tilt">
-      <h3>KosIn</h3>
-      <div class="stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span></div>
-      <p>Machine Learning app that predicts boarding house (kost) rental prices in Jakarta using a Random Forest model (R&sup2; = 0.8105). Selected as one of the top 22 teams at CS Festival 2026.</p>
-      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a><a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Live Demo</a></div>
+
+    <article class="card tilt" data-project>
+      <div class="card-body">
+        <h3>KosIn</h3>
+        <div class="stack"><span>Python</span><span>Streamlit</span><span>Scikit-learn</span></div>
+        <p class="desc">Machine Learning app that predicts boarding house (kost) rental prices in Jakarta using a Random Forest model (R&sup2; = 0.8105). Selected as one of the top 22 teams at CS Festival 2026.</p>
+        <button type="button" class="more">More details <i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="detail" hidden>
+          <li>Random Forest regression model with R&sup2; = 0.8105</li>
+          <li>Predicts boarding house (kost) rental prices across Jakarta</li>
+          <li>Interactive Streamlit app that anyone can try</li>
+          <li>Top 22 team at CS Festival 2026</li>
+        </ul>
+        <div class="row">
+          <a href="https://github.com/aqilanailalhusna/KosIn-Predict-Kos-Price" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+          <a href="https://kosin-pred.streamlit.app/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Live Demo</a>
+        </div>
+      </div>
     </article>
-    <article class="card tilt">
-      <h3>AksiKita</h3>
-      <div class="stack"><span>Vue.js</span><span>Nest.js</span><span>Prisma</span><span>PostgreSQL</span></div>
-      <p>Civic-tech platform for community-driven reporting of environmental and infrastructure issues, complete with gamification.</p>
-      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+
+    <article class="card tilt" data-project>
+      <div class="card-body">
+        <h3 title="Mangrove Aboveground Carbon (AGC) Estimation &amp; Feature Ablation Study (ICIMTECH 2026)">Mangrove Aboveground Carbon (AGC) Estimation &amp; Feature Ablation Study (ICIMTECH 2026)</h3>
+        <div class="stack"><span>Python</span><span>XGBoost</span><span>Scikit-learn</span></div>
+        <p class="desc">To evaluate the contribution of Sentinel-2 optical features and GEDI LiDAR structural features in predicting above-ground carbon biomass (AGC) in the mangroves of Rinca Island. Testing the effectiveness of optical data as a substitute for LiDAR and identifying the optimal feature combination using XGBoost regression, with the best results obtained from the GLCM + LiDAR combination (R&sup2; = 0.8779)</p>
+        <button type="button" class="more">More details <i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="detail" hidden>
+          <li>Ablation study of Sentinel-2 optical vs. GEDI LiDAR structural features</li>
+          <li>Study area: mangroves of Rinca Island</li>
+          <li>Tests whether optical data can substitute for LiDAR</li>
+          <li>XGBoost regression; best combination GLCM + LiDAR (R&sup2; = 0.8779)</li>
+        </ul>
+        <div class="row"><a href="https://github.com/chelseaolyvianii/Mangrove-Aboveground-Carbon" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+      </div>
     </article>
-    <article class="card tilt">
-      <h3>FitAI</h3>
-      <div class="stack"><span>Python</span><span>Hugging Face</span></div>
-      <p>AI recommendation engine for personalized workout and nutrition plans, based on physical metrics and user preferences.</p>
-      <div class="row"><a href="https://github.com/chelseaolyvianii" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+
+    <article class="card tilt" data-project>
+      <div class="card-body">
+        <h3>Analysis Indonesia's Renewable Energy</h3>
+        <div class="stack"><span>Python</span><span>Seaborn</span><span>Matplotlib</span><span>Streamlit</span></div>
+        <p class="desc">To evaluates trends in renewable energy growth over time, changes in the national energy mix, the relationship between renewable energy utilization and carbon dioxide (CO₂) emissions, and its connection to economic growth.</p>
+        <button type="button" class="more">More details <i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="detail" hidden>
+          <li>Renewable energy growth trends over time</li>
+          <li>Changes in Indonesia's national energy mix</li>
+          <li>Relationship between renewable use and CO₂ emissions</li>
+          <li>Connection to economic growth, shown in an interactive Streamlit dashboard</li>
+        </ul>
+        <div class="row">
+          <a href="https://github.com/chelseaolyvianii/Indonesia-s-Renewable-Energy-Transition" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a>
+          <a href="https://indonesia-s-renewableenergy.streamlit.app/" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Live Demo</a>
+        </div>
+      </div>
     </article>
+
+    <article class="card tilt" data-project>
+      <div class="card-body">
+        <h3>FitAI</h3>
+        <div class="stack"><span>Python</span><span>Hugging Face</span></div>
+        <p class="desc">AI recommendation engine for personalized workout and nutrition plans, based on physical metrics and user preferences.</p>
+        <button type="button" class="more">More details <i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="detail" hidden>
+          <li>Personalized workout and nutrition recommendations</li>
+          <li>Takes physical metrics and user preferences as input</li>
+          <li>Deployed as a live Hugging Face Space</li>
+        </ul>
+        <div class="row">
+          <a href="https://huggingface.co/spaces/stargazings/fitai" target="_blank" rel="noopener"><i class="fa-solid fa-globe"></i> Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card tilt" data-project>
+      <div class="card-body">
+        <h3 title="EIGER Warehouse Capacity &amp; Production Trend Analysis">EIGER Warehouse Capacity &amp; Production Trend Analysis</h3>
+        <div class="stack"><span>Python</span><span>Scikit-learn</span></div>
+        <p class="desc">EIGER's primary manufacturing facility needed to predict future production volumes beyond historical data (Months M1 to M144) and determine when production would exceed the existing warehouse limit of 25,000 bags/month. To account for complex growth dynamics, non-linear mathematical modeling and numerical root-finding algorithms were implemented.</p>
+        <button type="button" class="more">More details <i class="fa-solid fa-arrow-right"></i></button>
+        <ul class="detail" hidden>
+          <li>Forecasts production volume beyond historical data (M1 to M144)</li>
+          <li>Finds when output exceeds the 25,000 bags/month warehouse limit</li>
+          <li>Non-linear mathematical modeling for complex growth dynamics</li>
+          <li>Numerical root-finding algorithms to pinpoint the capacity crossover</li>
+        </ul>
+        <div class="row"><a href="https://github.com/chelseaolyvianii/EIGER-Warehouse-" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub Repo</a></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
@@ -163,6 +234,24 @@
     </div>
   </div>
 </div>
+
+<div class="pmodal" id="projModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle" aria-hidden="true">
+  <div class="pmodal-card">
+    <button type="button" class="modal-x" id="pmClose" aria-label="Close project details"><i class="fa-solid fa-xmark"></i></button>
+    <div class="pmodal-scroll">
+      <h3 id="pmTitle"></h3>
+      <div class="stack" id="pmStack"></div>
+      <h4>Overview</h4>
+      <p id="pmDesc"></p>
+      <div id="pmFeatWrap">
+        <h4>Key Highlights</h4>
+        <ul id="pmFeatures"></ul>
+      </div>
+      <div class="pm-links" id="pmLinks"></div>
+    </div>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate preview" aria-hidden="true"><img id="lbImg" alt=""></div>
 
 <button id="toTop" aria-label="Back to top"><i class="fa-solid fa-atom"></i><span>TOP //</span></button>

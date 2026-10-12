@@ -261,3 +261,51 @@ document.querySelectorAll('.tilt').forEach(el => {
     else if (modal.classList.contains('open')) close();
   });
 })();
+
+/* ===== Project detail modal ===== */
+(() => {
+  const modal = document.getElementById('projModal');
+  if (!modal) return;
+  const $ = id => document.getElementById(id);
+  const title = $('pmTitle'), stack = $('pmStack'), desc = $('pmDesc'),
+        feats = $('pmFeatures'), featWrap = $('pmFeatWrap'), links = $('pmLinks');
+  let lastFocus = null;
+
+  function openModal(card) {
+    lastFocus = document.activeElement;
+    title.textContent = card.querySelector('h3').textContent;
+    stack.innerHTML = card.querySelector('.stack').innerHTML;
+    desc.textContent = card.querySelector('.desc').textContent; // full text (clamp is CSS only)
+    links.innerHTML = card.querySelector('.row').innerHTML;
+
+    feats.innerHTML = '';
+    const items = card.querySelectorAll('.detail li');
+    items.forEach(li => feats.appendChild(li.cloneNode(true)));
+    featWrap.hidden = !items.length;
+
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    modal.querySelector('.pmodal-scroll').scrollTop = 0;
+    $('pmClose').focus({ preventScroll: true });
+  }
+
+  function closeModal() {
+    if (!modal.classList.contains('open')) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+
+  document.querySelectorAll('.card[data-project]').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('.row a')) return; // let GitHub / Live Demo links work normally
+      openModal(card);
+    });
+  });
+
+  $('pmClose').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); }); // backdrop click
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+})();

@@ -112,17 +112,71 @@ body.on .c-dot,body.on .c-ring{opacity:1}
 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 figcaption{text-align:center;font:600 .85rem 'Outfit',sans-serif;padding-top:8px;color:var(--navy)}
 
-/* Projects (soft pastel hover) */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
-.card{display:flex;flex-direction:column;gap:14px;background:#fff;padding:26px;border-radius:var(--r);position:relative;isolation:isolate;border:1px solid rgba(255,107,155,.15);box-shadow:0 8px 24px rgba(29,53,87,.06)}
+/* Projects: uniform cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:26px;align-items:stretch}
+
+.card{display:flex;flex-direction:column;background:#fff;border-radius:var(--r);position:relative;isolation:isolate;border:1px solid rgba(255,107,155,.15);box-shadow:0 8px 24px rgba(29,53,87,.06);transition:box-shadow .3s ease}
 .card::before{content:"";position:absolute;inset:-1px;z-index:-1;border-radius:var(--r);background:rgba(255,107,155,.08);border:1px solid rgba(255,107,155,.4);box-shadow:0 12px 32px rgba(255,107,155,.14);opacity:0;transition:opacity .3s ease}
 .card:hover::before{opacity:1}
-.card h3{font-size:1.6rem}
-.stack{display:flex;flex-wrap:wrap;gap:8px}
-.stack span{font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:99px;background:#f1e8ff;color:var(--purple)}
-.card p{flex:1}
-.row{display:flex;gap:16px;flex-wrap:wrap;font-weight:600}
-.row a{color:var(--pink);transition:color .2s,transform .2s}.row a:hover{color:var(--purple);transform:translateY(-3px)}
+.card:hover{box-shadow:0 16px 40px rgba(255,107,155,.18)}
+
+/* 16:9 cover slot */
+.cover{position:relative;flex:none;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;border-radius:var(--r) var(--r) 0 0;background:linear-gradient(135deg,#ffe3ec,#efe4ff);color:var(--pink2);font-size:2.2rem}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .cover img{transform:scale(1.05)}
+
+/* Body fills the remaining height so the footer can sit at the bottom */
+.card-body{flex:1;display:flex;flex-direction:column;gap:12px;padding:20px 22px 22px}
+
+/* Title: max 2 lines */
+.card h3{font-size:1.4rem;line-height:1.2;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-clamp:2;overflow:hidden}
+
+/* Tech tags: small pills, wrap to max 2 rows, extra tags are clipped */
+.stack{display:flex;flex-wrap:wrap;gap:8px;max-height:calc(26px * 2 + 8px);overflow:hidden}
+.stack span{display:inline-flex;align-items:center;height:26px;padding:0 12px;font-size:.74rem;font-weight:600;line-height:1;border-radius:99px;background:#f1e8ff;color:var(--purple);white-space:nowrap}
+
+/* Description: max 3 lines, always reserves 3 lines so cards stay aligned */
+.desc{font-size:.92rem;line-height:1.6;min-height:4.8em;color:#4a4d66;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden}
+
+/* Footer links: pinned to the bottom, aligned across all cards */
+.row{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,107,155,.18);display:flex;gap:16px;flex-wrap:wrap;font-weight:600;font-size:.92rem}
+.row a{color:var(--pink);transition:color .2s,transform .2s}
+.row a:hover{color:var(--purple);transform:translateY(-3px)}
+
+/* ===== Project cards: clickable + "More details" ===== */
+.card[data-project]{cursor:pointer}
+.card[data-project]:hover{transform:translateY(-2px)}
+.more{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;padding:0;border:0;background:none;font:600 .85rem 'Plus Jakarta Sans',sans-serif;color:var(--purple);cursor:pointer;opacity:.85;transition:opacity .2s,gap .2s,color .2s}
+.more i{font-size:.75rem;transition:transform .25s}
+.card:hover .more,.more:focus-visible{opacity:1;color:var(--pink)}
+.card:hover .more i{transform:translateX(4px)}
+
+/* ===== Project modal ===== */
+.pmodal{position:fixed;inset:0;z-index:210;display:grid;place-items:center;padding:16px;background:rgba(29,53,87,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s}
+.pmodal.open{opacity:1;visibility:visible}
+.pmodal-card{position:relative;display:flex;flex-direction:column;width:min(640px,100%);max-height:88vh;max-height:88dvh;overflow:hidden;border-radius:26px;background:linear-gradient(160deg,#fff,#fff4f8);border:2px solid var(--navy);box-shadow:8px 8px 0 var(--yellow),0 30px 70px rgba(29,53,87,.3);opacity:0;transform:translateY(20px) scale(.94);transition:transform .4s cubic-bezier(.2,1.1,.3,1),opacity .3s ease}
+.pmodal.open .pmodal-card{opacity:1;transform:none}
+.pmodal-scroll{overflow-y:auto;overscroll-behavior:contain;padding:34px 30px 30px;display:flex;flex-direction:column;gap:14px}
+.pmodal-scroll::-webkit-scrollbar{width:6px}
+.pmodal-scroll::-webkit-scrollbar-thumb{background:rgba(255,107,155,.45);border-radius:99px}
+.pmodal h3{font-size:clamp(1.3rem,4vw,1.7rem);padding-right:44px}
+.pmodal h4{font:700 .8rem 'Outfit',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-top:6px}
+.pmodal .stack{max-height:none;overflow:visible}
+.pmodal p{font-size:.96rem;line-height:1.7;color:#4a4d66}
+#pmFeatures{list-style:none;display:grid;gap:8px}
+#pmFeatures li{position:relative;padding-left:24px;font-size:.94rem;color:#4a4d66}
+#pmFeatures li::before{content:"\2726";position:absolute;left:0;color:var(--pink)}
+.pm-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;padding-top:18px;border-top:1px solid rgba(255,107,155,.2)}
+.pm-links a{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:99px;font-weight:600;font-size:.92rem;color:#fff;background:var(--pink);box-shadow:0 6px 18px rgba(255,107,155,.4);transition:transform .25s,box-shadow .25s,background .25s}
+.pm-links a:last-child:not(:first-child){background:var(--purple);box-shadow:0 6px 18px rgba(131,56,236,.35)}
+.pm-links a:hover{transform:translateY(-3px)}
+body.no-scroll{overflow:hidden}
+@media(max-width:520px){
+  .pmodal{padding:10px;align-items:end}
+  .pmodal-card{border-radius:22px;max-height:92dvh}
+  .pmodal-scroll{padding:28px 20px 22px}
+  .pm-links a{flex:1 1 100%;justify-content:center}
+}
 
 /* Experience timeline (dot centered on the line) */
 .timeline{display:grid;gap:22px}
