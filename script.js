@@ -127,9 +127,9 @@ document.querySelectorAll('.tilt').forEach(el => {
   const radar = $('radar');
   if (!radar) return;
   const rings = [
-    { r: .32, c: '#FFD166', n: 'Soft skills', a: ['Leadership', 'Events|Event Management', 'Speaking|Public Speaking', 'Mentoring|Teaching & Mentoring', 'Choir|Music & Choir Leadership'] },
-    { r: .64, c: '#FF6B9B', n: 'Data & ML', a: ['Python', 'Java', 'C', 'SQL|SQL (MySQL, PostgreSQL)', 'pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'XGBoost'] },
-    { r: .92, c: '#8338EC', n: 'Dev & Tools', a: ['JavaScript', 'HTML/CSS', 'React', 'Node.js', 'Flask', 'FastAPI', 'Vue.js', 'Nest.js', 'Git', 'Docker', 'GCP'] }
+    { r: .32, c: '#FFD166', n: 'Soft skills', a: ['Leadership', 'Events|Event Management', 'Speaking|Public Speaking', 'Mentoring|Teaching & Mentoring', 'Adaptability', 'Responsible'] },
+    { r: .64, c: '#FF6B9B', n: 'Data & ML', a: ['Python', 'Java', 'C', 'SQL|SQL (MySQL, PostgreSQL)', 'pandas', 'NumPy', 'Matplotlib', 'Scikit-learn', 'XGBoost', 'RandomForest'] },
+    { r: .92, c: '#8338EC', n: 'Dev & Tools', a: ['VS Code', 'Google Collab', 'DevC++', 'Cisco Packet Tracer', 'phpMyAdmin', 'Eclipse', 'JavaScript', 'HTML/CSS', 'React', 'Node.js', 'Vue.js', 'Nest.js', 'Git', 'Github', 'Figma'] }
   ];
   rings.forEach((rg, ri) => {
     const o = document.createElement('div');
