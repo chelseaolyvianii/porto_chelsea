@@ -18,7 +18,7 @@ setTimeout(() => $('loader').classList.add('done'), 1600);
 (() => {
   const el = $('typed');
   if (!el) return;
-  const roles = ['Data Scientist', 'Data Analyst', 'AI Engineer', 'Machine Learning Specialist'];
+  const roles = ['Data Scientist', 'Data Analyst', 'Data Engineer', 'AI Engineer', 'Machine Learning Specialist'];
   if (reduce) { el.textContent = roles[0]; return; }
   let r = 0, c = 0, del = false;
   (function tick() {
